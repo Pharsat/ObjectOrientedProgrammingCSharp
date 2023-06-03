@@ -1,4 +1,4 @@
-﻿namespace Intro
+﻿namespace Modelo
 {
     using System;
     using System.Collections.Generic;
@@ -6,15 +6,16 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class CuentaBancaria
+    public class CuentaBancaria
     {
         public CuentaBancaria(int numeroDeCuenta, int saldo)
         {
             NumeroDeCuenta = numeroDeCuenta;
-            Saldo = saldo;
+            Movimientos = new List<MovimientoBancario>();
         }
 
         public int NumeroDeCuenta;
-        public int Saldo;
+
+        public List<MovimientoBancario> Movimientos { get; set; }
     }
 }

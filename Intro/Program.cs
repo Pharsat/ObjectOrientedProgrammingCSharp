@@ -1,8 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Intro;
-
-Console.WriteLine("Hello, World!");
+using Modelo;
 
 /*
 Conceptos fundamentales de la programación orientada a objetos
@@ -10,28 +9,75 @@ Definición de programación orientada a objetos (POO)
 Objetos y clases
  */
 
-var cliente = new Cliente("Cristian");
-var cuenta = new CuentaBancaria(12345, 0);
+var cliente = new Cliente("Cristian")
+{
+    Cuenta = new CuentaBancaria(12345, 0),
+    Cedula = 1203689645
+};
 
-cliente.Cuenta = cuenta;
-
-while (true)
+while(true)
 {
     Console.WriteLine("Quieres depositar o retirar, digite D o R segun el caso:");
-    var respuesta = Console.ReadLine();
-    if (respuesta == "D")
+    string respuesta = Console.ReadLine();
+    var valorMovimiento = 0;
+    string movimiento = string.Empty;
+    int multiplicador = 1;
+    
+    if (respuesta.ToUpper() == "D")
     {
-        Console.WriteLine("Cuanto quiere depositar?");
-        var cantidadADepositar = int.Parse(Console.ReadLine());
-        cliente.Consignar(cantidadADepositar);
+        movimiento = "depositar";
     }
-    else if (respuesta == "R")
+    else if (respuesta.ToUpper() == "R")
     {
-        Console.WriteLine("Cuanto quiere retirar?");
-        var cantidadARetirar = int.Parse(Console.ReadLine());
-        cliente.Retirar(cantidadARetirar);
+        movimiento = "retirar";
+        multiplicador *= -1;
     }
-    Console.WriteLine("Su nuevo saldo es de: " + cliente.Cuenta.Saldo);
+    else
+    {
+        continue;
+    }
+
+    Console.WriteLine($"Cuanto quiere {movimiento}?");
+    var cantidad = int.Parse(Console.ReadLine());
+
+    if (LaCantidadEsCorrecta(cantidad))
+    {
+        cliente.EjecutarMovimiento(cantidad * multiplicador);
+    }
+    else
+    {
+        Console.WriteLine($"La cantidad a {movimiento} es incorrecta");
+    }
+
+
+    foreach (var movimientoEnCuenta in cliente.Cuenta.Movimientos.OrderByDescending(movimiento => movimiento.Valor))
+    {
+        if (movimientoEnCuenta.Valor < 0)
+        {
+            Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted retiró {movimientoEnCuenta.Valor}");
+        }
+        else
+        {
+            Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted depositó {movimientoEnCuenta.Valor}");
+        }
+    }
+
+    var saldo = cliente.Cuenta.Movimientos.Sum(movimiento => movimiento.Valor);
+
+    Console.WriteLine("Su nuevo saldo es de: " + saldo);
+}
+
+
+static bool LaCantidadEsCorrecta(int valor)
+{
+    if (valor == 0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 /*
