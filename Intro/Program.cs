@@ -19,7 +19,6 @@ while(true)
 {
     Console.WriteLine("Quieres depositar o retirar, digite D o R segun el caso:");
     string respuesta = Console.ReadLine();
-    var valorMovimiento = 0;
     string movimiento = string.Empty;
     int multiplicador = 1;
     
