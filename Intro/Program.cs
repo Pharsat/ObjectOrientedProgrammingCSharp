@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Intro;
 using Modelo;
 
 /*
@@ -15,18 +14,18 @@ var cliente = new Cliente("Cristian")
     Cedula = 1203689645
 };
 
-while(true)
+while (true)
 {
     Console.WriteLine("Quieres depositar o retirar, digite D o R segun el caso:");
-    string respuesta = Console.ReadLine();
-    string movimiento = string.Empty;
+    string? respuesta = Console.ReadLine();
+    string movimiento;
     int multiplicador = 1;
-    
-    if (respuesta.ToUpper() == "D")
+
+    if (respuesta?.ToUpper() == "D")
     {
         movimiento = "depositar";
     }
-    else if (respuesta.ToUpper() == "R")
+    else if (respuesta?.ToUpper() == "R")
     {
         movimiento = "retirar";
         multiplicador *= -1;
@@ -37,7 +36,7 @@ while(true)
     }
 
     Console.WriteLine($"Cuanto quiere {movimiento}?");
-    var cantidad = int.Parse(Console.ReadLine());
+    var cantidad = int.Parse(Console.ReadLine() ?? "0");
 
     if (LaCantidadEsCorrecta(cantidad))
     {
@@ -49,19 +48,13 @@ while(true)
     }
 
 
-    foreach (var movimientoEnCuenta in cliente.Cuenta.Movimientos.OrderByDescending(movimiento => movimiento.Valor))
+    foreach (var movimientoEnCuenta in cliente.Cuenta.Movimientos.OrderByDescending(movimientoBancario => movimientoBancario.Valor))
     {
-        if (movimientoEnCuenta.Valor < 0)
-        {
-            Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted retiró {movimientoEnCuenta.Valor}");
-        }
-        else
-        {
-            Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted depositó {movimientoEnCuenta.Valor}");
-        }
+
+        Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted {(movimientoEnCuenta.Valor < 0 ? "retiró" : "depositó")} {movimientoEnCuenta.Valor}");
     }
 
-    var saldo = cliente.Cuenta.Movimientos.Sum(movimiento => movimiento.Valor);
+    var saldo = cliente.Cuenta.Movimientos.Sum(movimientoBancario => movimientoBancario.Valor);
 
     Console.WriteLine("Su nuevo saldo es de: " + saldo);
 }
