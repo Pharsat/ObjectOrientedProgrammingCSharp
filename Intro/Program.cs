@@ -54,7 +54,8 @@ while (true)
         Console.WriteLine($"El dia {movimientoEnCuenta.Fecha} usted {(movimientoEnCuenta.Valor < 0 ? "retiró" : "depositó")} {movimientoEnCuenta.Valor}");
     }
 
-    var saldo = cliente.Cuenta.Movimientos.Sum(movimientoBancario => movimientoBancario.Valor);
+    var saldo = cliente.Cuenta.Movimientos
+        .Sum(movimientoBancario => movimientoBancario.Valor);
 
     Console.WriteLine("Su nuevo saldo es de: " + saldo);
 }
