@@ -8,24 +8,23 @@ Definición de programación orientada a objetos (POO)
 Objetos y clases
  */
 
-var cliente = new Cliente("Cristian")
+var cliente = new ClienteEmpresarial("Cristian")
 {
-    Cuenta = new CuentaBancaria(12345, 0),
-    Cedula = 1203689645
+    Cuenta = new CuentaBancaria(12345, 0)
 };
 
 while (true)
 {
     Console.WriteLine("Quieres depositar o retirar, digite D o R segun el caso:");
-    string? respuesta = Console.ReadLine();
+    string? respuestaDelUsuario = Console.ReadLine();
     string movimiento;
     int multiplicador = 1;
 
-    if (respuesta?.ToUpper() == "D")
+    if (respuestaDelUsuario?.ToUpper() == "D")
     {
         movimiento = "depositar";
     }
-    else if (respuesta?.ToUpper() == "R")
+    else if (respuestaDelUsuario?.ToUpper() == "R")
     {
         movimiento = "retirar";
         multiplicador *= -1;
