@@ -8,34 +8,18 @@ namespace TestHerenciaYPolimorfismo
     {
         static void Main(string[] args)
         {
-            var triangulo = new Triangulo()
+            try
             {
-                Base = 10,
-                Altura = 5
-            };
-
-            var cuadrado = new Cuadrado()
-            {
-                Lado = 10
-            };
-
-            var formas = new List<IForma>()
-            {
-                triangulo,
-                cuadrado,
-                new Circulo()
-                {
-                    Radio = 3
-                }
-            };
-
-            foreach (var forma in formas)
-            {
-                Console.WriteLine($"El area del {forma.Nombre} es: " + forma.CalcularArea());
-                Console.WriteLine($"El perimetro del {forma.Nombre} es: " + forma.CalcularPerimetro());
+                int y = 5 / 5; // Esto generará una excepción
             }
-
-            Console.ReadLine();
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Ocurrió una excepción: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Este bloque se ejecutará siempre, independientemente de si ocurrió una excepción o no.");
+            }
         }
     }
 }
