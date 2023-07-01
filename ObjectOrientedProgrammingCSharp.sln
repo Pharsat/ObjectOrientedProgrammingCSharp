@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerenciaYPolimorfismo", "He
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHerenciaYPolimorfismo", "TestHerenciaYPolimorfismo\TestHerenciaYPolimorfismo.csproj", "{B92E1DF7-F64A-4769-A9BD-7C7BEAA586F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlujosDeControl", "FlujosDeControl\FlujosDeControl.csproj", "{F21DD5F5-1DDF-4DB6-A9A6-E19D6809BD13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlujosDeControl", "FlujosDeControl\FlujosDeControl.csproj", "{F21DD5F5-1DDF-4DB6-A9A6-E19D6809BD13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessAPI", "AccessAPI\AccessAPI.csproj", "{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessAPI", "AccessAPI\AccessAPI.csproj", "{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqSamples", "LinqSamples\LinqSamples.csproj", "{FAF597C9-21B5-4077-9879-5F2C2C451F77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
