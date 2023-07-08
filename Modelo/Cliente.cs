@@ -13,10 +13,11 @@
 
         public CuentaBancaria Cuenta;
 
-        public virtual void EjecutarMovimiento(int dinero)
+        public virtual MovimientoBancario EjecutarMovimiento(int dinero)
         {
-            MovimientoBancario movimiento = new MovimientoBancario(DateTime.Now, dinero);
+            var movimiento = new MovimientoBancario(DateTime.Now, dinero);
             Cuenta.Movimientos.Add(movimiento);
+            return movimiento;
         }
     }
 }

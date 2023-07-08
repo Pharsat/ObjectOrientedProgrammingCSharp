@@ -13,9 +13,9 @@
             
         }
 
-        public override void EjecutarMovimiento(int dinero)
+        public override MovimientoBancario EjecutarMovimiento(int dinero)
         {
-            base.EjecutarMovimiento(dinero);
+            return base.EjecutarMovimiento(dinero);
         }
     }
 }

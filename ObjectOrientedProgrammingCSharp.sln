@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlujosDeControl", "FlujosDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessAPI", "AccessAPI\AccessAPI.csproj", "{FA59A6E8-B063-4FB7-A43D-6F3C416CE7EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqSamples", "LinqSamples\LinqSamples.csproj", "{FAF597C9-21B5-4077-9879-5F2C2C451F77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqSamples", "LinqSamples\LinqSamples.csproj", "{FAF597C9-21B5-4077-9879-5F2C2C451F77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrabajoConArchivos", "TrabajoConArchivos\TrabajoConArchivos.csproj", "{EEB7C563-B665-4FC1-A7E9-F7FF65E3D0B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF597C9-21B5-4077-9879-5F2C2C451F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB7C563-B665-4FC1-A7E9-F7FF65E3D0B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB7C563-B665-4FC1-A7E9-F7FF65E3D0B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB7C563-B665-4FC1-A7E9-F7FF65E3D0B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB7C563-B665-4FC1-A7E9-F7FF65E3D0B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
